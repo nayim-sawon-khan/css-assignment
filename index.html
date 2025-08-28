@@ -3,85 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Answer to the assignment module 02 </title>
-<style>
-  * { box-sizing: border-box;
+  <title>Responsive Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
     }
-h1 { 
-  margin-bottom: 15px;
-}
 
-p{
-  border: 1px solid black;
-  background-color: #A52A2A;
-  width: 90%;
-  height: 150px;
-  margin-right: auto;
-  margin-left: auto;
-  font-family: Helvetica;
-  color: white;
-}
- 
-@media (min-width:992px) {
- .col-lg-1, .col-lg-2,'col-lg-3 
-  {float: left;
-   border: 1px solid white; 
-     }
-  .col-lg-1 { width: 33.33%; }
-  .col-lg-2 { width: 66.67%; }
-  .col-lg-3 { width: 100%; }
-}
-  @media (min-width: 768px) and (max-width: 991px)
-  {
-    .col-md-1,.col-md-2,.col-md-3
-    {
-      float: left;
-      border: 1px solid white;
+    h1 {
+      margin: 20px 0;
     }
-    .col-md-1 { width: 33.33%; }
-    .col-md-2 { width: 66.67%; }
-    .col-md-3 { width: 100%; }
-  }
-@media (max-width: 767px) {
-  .col-xs-1,.col-xs-2,.xol-xs-3
-  {float: left;
-  border: 1px solid white; }
-  .col-xs-1 { width: 33.33%; }
-  .col-xs-2 { width: 66.67%; }
-  .col-xs-3 { width: 100%; }
-}
-</style>
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .menu-item {
+      position: relative;
+      background: #bfbfbf;
+      padding: 40px 20px 20px 20px;
+      border: 2px solid #000;
+      text-align: left;
+    }
+
+    /* Title inside box */
+    .menu-title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 5px 15px;
+      font-weight: bold;
+      border: 2px solid #000;
+      border-top: none;
+      border-right: none;
+    }
+
+    .chicken {
+      background: #bfbfbf;
+    }
+    .chicken .menu-title {
+      background: #f4a7a7;
+    }
+
+    .beef {
+      background: #bfbfbf;
+    }
+    .beef .menu-title {
+      background: #d94a38;
+      color: #fff;
+    }
+
+    .sushi {
+      background: #bfbfbf;
+    }
+    .sushi .menu-title {
+      background: #e3d67a;
+    }
+
+    /* Tablet (768px – 991px) */
+    @media (max-width: 991px) and (min-width: 768px) {
+      .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sushi {
+        grid-column: span 2;
+      }
+    }
+
+    /* Mobile (<767px) */
+    @media (max-width: 767px) {
+      .menu-container {
+        grid-template-columns: 1fr;
+      }
+      .menu-item {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-  
 <body>
-    <h1>Our Menu</h1>
-
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-xs-12"> <div class="menu-title"> Chicken </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-      </div>
-
-      <div class="row"> <div class=" col-lg-3 col-md-6 col-xs-12">
-        <div class="menu-title">Beef</div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-        </div>
-
-      <div class="menu-box sushi">
-        <div class= "col-lg-1 col-xs-12">
-        <div class="menu-title">Sushi</div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
+  <h1>Our Menu</h1>
+  <div class="menu-container">
+    <div class="menu-item chicken">
+      <div class="menu-title">Chicken</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="menu-item beef">
+      <div class="menu-title">Beef</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="menu-item sushi">
+      <div class="menu-title">Sushi</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
     </div>
   </div>
 </body>
